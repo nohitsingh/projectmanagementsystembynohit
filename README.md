@@ -1,29 +1,19 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This Project is on Project Management System where you can add, update and delete the list and also check wether the host is working or not along with many other features. Backend is made in Node.js along with MongoDB and the frontend is supported Bootstrap, Javascript and Jquery.
 
-### What is this repository for? ###
+### FEATURES ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* SignIn page
+* LogIn page
+* Forget Password page
+* User-profile Page(Editable)
+* CRUD App
+* Upload Image
+* Real-time Host check
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* To get started, first of all follow the guidelines given in the new_settings.env file and create '.env' file according to it. 
+* Then run 'npm install' in terminal to get the node_modules.
+* Run 'node app.js' to the start the server and the port number is 5000 by default.

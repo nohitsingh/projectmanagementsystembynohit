@@ -187,9 +187,23 @@
                                                 <div class="form-group">
                                                         <h3 class="form-control">Select image
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            <input type="file" name="file" class="" value="img/<%= item[0].image %>" required>
+                                                            <input type="file" name="file" class="" accept="image/png, image/jpeg" required>
                                                         </h3>
-    
+                                                        <script>
+                                                            // Get a reference to our file input
+                                                            const fileInput = document.querySelector('input[type="file"]');
+                                                        
+                                                            // Create a new File object
+                                                            const myFile = new File(['//img/<%= item[0].image %>'], '<%= item[0].image %>', {
+                                                                type: 'image/*',
+                                                                lastModified: new Date(),
+                                                            });
+                                                        
+                                                            // Now let's create a DataTransfer to get a FileList
+                                                            const dataTransfer = new DataTransfer();
+                                                            dataTransfer.items.add(myFile);
+                                                            fileInput.files = dataTransfer.files;
+                                                        </script>
                                                 </div>
 
                                                 <div class="form-group text-center">
