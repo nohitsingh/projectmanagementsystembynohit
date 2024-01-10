@@ -2,44 +2,37 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<style>
+    .input-placeholder {
+        position: relative;
+      }
+      .input-placeholder input {
+        padding: 2px;
+      }
+      .input-placeholder input:valid + .placeholder {
+        display: none;
+      }
+      .placeholder {
+        position: absolute;
+        pointer-events: none;
+        top: 2px;
+        bottom: 2px;
+        left: 6px;
+        margin: auto;
+        color: #ccc;
+      }
+      .placeholder span {
+        color: red;
+      }
+</style>
 </head>
 <body>
-	<input type="text" id="sitehost">		
-	<input type="button" id="checkhost" value="check">	
-    <p id="demo">	</p>
-<script>
-   let url123 = "https://facebook.com"
-    function isSiteOnline(url,callback) {
-        // try to load favicon
-        var timer = setTimeout(function(){
-            // timeout after 5 seconds
-            callback(false);
-        },5000)
-    
-        var img = document.createElement("img");
-        img.onload = function() {
-            clearTimeout(timer);
-            callback(true);
-        }
-    
-        img.onerror = function() {
-            clearTimeout(timer);
-            callback(false);
-        }
-    
-        img.src = url+"/favicon.ico";
-    }
-    
- function codeAddress() {
-        isSiteOnline(url123,function(result){
-            var msg = result ? "Active" : "Inactive";
-            document.getElementById("demo").innerHTML = msg;   
-        })
-    }
-    
-    window.onload = codeAddress;
-</script>
-
+	<div class="input-placeholder">
+        <input type="text" required>
+        <div class="placeholder">
+            Name<span>*</span>
+        </div>
+</div>
+<img src="images/undraw_rocket.svg" onerror="this.style.display='none'"/>
 </body>
 </html>

@@ -181,7 +181,7 @@
 
                                                     <input type="text" name="menuUrl" value="<%= item[0].menuUrl %>"
                                                         class="form-control form-control-user" 
-                                                        placeholder="Enter Host">
+                                                        placeholder="Enter Description">
                                                 </div>
 
                                                 <div class="form-group">
@@ -194,7 +194,7 @@
                                                             const fileInput = document.querySelector('input[type="file"]');
                                                         
                                                             // Create a new File object
-                                                            const myFile = new File(['//img/<%= item[0].image %>'], '<%= item[0].image %>', {
+                                                            const myFile = new File(['<%= item[0].image %>'], '<%= item[0].image %>', {
                                                                 type: 'image/*',
                                                                 lastModified: new Date(),
                                                             });
